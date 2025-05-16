@@ -1,0 +1,46 @@
+body{
+    background-color: black;
+    height: 3000px;
+}
+
+.header{
+    display: flex;
+    background-color: white;
+    align-items: center;
+    justify-content: space-between;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0%;
+    height: 75px;
+}
+
+#b1{
+    color: white;
+    background-color: rgb(20, 73, 197);
+    border-radius:2px;
+    padding: 5px 8px;
+    border: none; 
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+#b2{
+    border: none; 
+    padding: 5px 8px;
+    color: rgb(54, 52, 52);
+    border-radius:2px;
+    font-weight: bold;
+
+}
+
+.header img{
+    height: 60px;
+    width: 60px;
+    border-radius: 30px;
+    margin-left: 50px;
+}
+
+.buttons{
+    margin-right: 50px;
+}

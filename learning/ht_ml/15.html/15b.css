@@ -1,0 +1,62 @@
+.shirt{
+    height: 500px;
+    width: 500px;
+    /* padding:25px; */
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.386);
+}
+
+
+
+
+
+.box{
+    position: fixed;
+    top: 400px;
+    left: 1000px;
+}
+
+
+.add-to-cart{
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    opacity: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background-color: rgba(237, 234, 234, 0.477);
+    padding-top: 60px;
+    padding-bottom: 60px;
+    transition: opacity 0.25s;
+
+}
+
+
+
+.discount{
+    position: absolute;
+    color: white;
+    background-color: black;
+    top:20px;
+    right: 0px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 18px;
+    padding: 8px;
+}
+
+.b1{
+    font-size: 25px;
+    border: 1px solid black;
+    padding: 8px 16px;
+
+}
+
+.box:hover .add-to-cart{
+    opacity: 1;
+}
+
+.add-to-cart button:active{
+    background-color: black;
+    color: white;
+}
+

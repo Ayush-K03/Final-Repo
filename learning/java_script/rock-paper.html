@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>Rock - Paper - Scissors</p>
+    <button onclick=" func1('rock');">Rock</button>
+    <button onclick=" func1('paper');">Paper</button>
+    <button onclick=" func1('scissor');">Scissor</button>
+
+
+    <script>
+        function func1(a3){
+
+            const a1= Math.random();
+
+            let a2;
+            if (a1>=0 && a1<1/3){
+                a2='rock';
+            }
+            
+            else if ( a1>=1/3 && a1<=2/3){
+                a2='paper';
+                
+            }
+            
+            else{
+                a2='scissor';
+            }
+
+            
+            if(((a3==='rock')&& (a2==='paper'))  || ((a3==='paper')&& (a2==='scissor')) || ((a3==='scissor')&& (a2==='rock'))){
+                alert(`You chose ${a3}. Computer chose ${a2}. You lose.`);}
+            
+            else if (((a2==='rock')&& (a3==='paper'))  || ((a2==='paper')&& (a3==='scissor')) || ((a2==='scissor')&& (a3==='rock'))){
+                alert(`You chose ${a3}. Computer chose ${a2}. You won.`);}
+
+            else if (a2===a3){
+                alert(`You chose ${a3}. Computer chose ${a2}. Tie.`);}
+        }
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,61 @@
+
+.removebtn{
+    color:white;
+    background-color: rgb(206, 11, 11);
+    border: none;
+    padding: 5px 11px;
+    font-size:12px;
+}
+.add-button{
+    color:white;
+    background-color: rgb(16, 121, 16);
+    border: none;
+    padding: 5px 16px;
+}
+
+.imput{
+    padding: 5px 10px;
+    font-size: 12px;
+    border-color: ;
+}
+
+.date{
+    padding: 3px;
+}
+
+
+.a1{
+    display: flex;
+    align-items: center;
+    column-gap: 8px;
+}
+
+.msg{
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px ;
+}
+
+.u1{
+    display: flex;
+    justify-content: space-between;
+    width: 360px;
+}
+
+.u01{
+    width: 150px;
+        word-wrap: break-word;
+}
+
+body{
+    margin-left: 20px;
+    background-color: black;
+    color: white;
+    background-image: url('cat.webp');
+    /* background-size:800px; */
+    /* background-position: center; */
+    /* background: no-repeat; */
+    background-position: top;
+    backgroun
+}

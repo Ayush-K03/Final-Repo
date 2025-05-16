@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body><p>Take your guess!</p>
+    <button onclick="d2('heads')">Heads</button>
+    <button onclick="d2('tails')">Tails</button>
+
+
+
+    <script>
+        let a6;
+        if (localStorage.getItem('score')!==null){
+            a6 =JSON.parse(localStorage.getItem('score'));
+        }
+
+        else{
+            a6={
+                wins:0,
+                loss:0
+            };
+        }
+
+
+        function d2(guess){
+            const a1= Math.random();
+            if (a1>=0.5){
+                var1='tails';}
+            else{
+                var1='heads';
+            }
+
+            if (var1===guess){
+                console.log('You win !')
+                a6.wins+=1;
+                localStorage.setItem('score',JSON.stringify(a6));
+                console.log('score',JSON.stringify(a6));
+                
+            }
+            
+            else{
+                console.log('You lose');
+                a6.loss+=1;
+                console.log('score',JSON.stringify(a6));
+            }
+        }
+
+
+    </script>
+</body>
+</html>

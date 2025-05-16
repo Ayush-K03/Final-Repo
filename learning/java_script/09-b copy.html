@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <input type="text" placeholder="Enter text here" onkeyup="f1(event);" class=a1>
+    <p class="msg"></p>
+
+
+    <script>
+        let a1;
+        function f1(event){
+            a1=(document.querySelector('.a1').value);
+            document.querySelector('.msg').innerHTML=a1;
+        }
+    </script>
+</body>
+</html>

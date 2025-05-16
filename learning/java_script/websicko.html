@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <p>Cart quantity</p>
+        <button  onclick="f1();">Show quantity</button>
+        <button onclick="update(1);">Add to cart</button>
+        <button onclick="update(2);">+2</button>
+        <button onclick="update(3);">+3</button>
+        <button onclick="update(4);">+4</button>
+        <button onclick="update(5);">+5</button>
+        <button onclick="update(-1);">Remove from Cart</button>
+        <button onclick="update(-2);">-2</button>
+        <button onclick="update(-3);">-3</button>
+        <button onclick="reset(); ">Reset Cart</button>
+        <p class="numberofItems"></p>
+        <p class="numberofItems2"></p>
+
+
+
+    </div>
+    <script>
+
+        
+        let a1;
+        if (localStorage.getItem('toStore')!==null){
+            a1=JSON.parse(localStorage.getItem('toStore'));
+        }
+        else{
+            a1=0;}
+
+        update();
+        function update (change=0){
+            if (a1+change>10){
+                document.querySelector('.numberofItems2').innerHTML=('Cart is full ! ');
+                return;
+            }
+            
+            else if (a1+change <0){
+                document.querySelector('.numberofItems2').innerHTML=("Not enough products in the cart!");
+                return;
+            }
+            
+            
+            else{
+                a1=a1+change;
+                document.querySelector('.numberofItems').innerHTML=(`Cart quantity : ${a1}`);
+                document.querySelector('.numberofItems2').innerHTML = '';
+                localStorage.setItem('toStore',JSON.stringify(a1));
+            }
+
+        }
+
+        function reset(){
+            a1=0;
+            update();
+            localStorage.setItem('toStore',JSON.stringify(a1));
+            document.querySelector('.numberofItems2').innerHTML=(`Cart was reset.`);
+        }
+    </script>
+</body>
+</html>

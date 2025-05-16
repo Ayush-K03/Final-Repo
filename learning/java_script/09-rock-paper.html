@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+
+    <style>
+        body{
+            background-color: rgb(26, 25, 25);
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            color: white;
+        }
+
+        .i1{
+            height: 25px;
+            width: 25px;
+            object-fit: cover;
+        }
+        
+        .b1{
+            background-color: transparent;
+            border:1.5px white solid;
+            border-radius: 50px;
+            padding: 13px 15px;
+            margin-right: 5px;
+
+        }
+
+        .auto-play{
+            border: none;
+            font-size: 8px;
+            padding: 4px 10px;
+        }
+
+        .b6{
+            border: none;
+            font-size: 8px;
+            padding: 4px 10px;
+        }
+
+
+        .msg1{
+            font-size: 8px;
+            margin-bottom: 2px;
+            font-weight: normal;
+        }
+
+        .msg0{
+            font-weight: bold;
+            font-size: 12px;
+        }
+
+
+        .prompt{
+            display:none;
+        }
+
+
+        .prompt1{
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <p style="font-weight: bold;">Rock Paper Scissor</p>
+    <button class="b1 the-rock"><img src="rock-emoji.png" alt="" class="i1"></button>
+    <button class="b1 the-paper"><img src="paper-emoji.png" alt="" class="i1"></button>
+    <button class="b1 the-scissor"><img src="scissors-emoji.png" alt="" class="i1"></button>
+
+
+    <p class="msg0"></p>
+    <p class="msg1"></p>
+    <p class="msg" style="font-size: 8px; margin-bottom: 2px;  margin-top: 25px;"></p>
+
+    <button class="b6">Clear Score</button>
+
+    <button class="auto-play">Autoplay</button>
+
+
+    <div class="prompt" style="font-size: 10px; margin-top: 10px;">
+        Are you sure you want to reset the score ?
+        <button class="yes" style="font-size: 9px; padding: 0px 4px; margin-left: 5px;">Yes</button>
+        <button class="no" style="font-size: 9px; padding: 0px 4px; margin-left: 3px;">No</button>
+    </div>
+    <script>
+
+
+
+
+        let intervalId;
+        let autoPlaying=false;
+        let score;
+        if (localStorage.getItem('final')!==null){
+            score=JSON.parse(localStorage.getItem('final'));
+        }
+        else{
+            score={
+                Wins:0,
+                Losses:0,
+                Tie:0
+            };
+        }
+
+        const a22= document.querySelector('.msg');
+        const a23= document.querySelector('.msg0');
+        const a24= document.querySelector('.msg1');
+        a22.innerHTML = `Wins: ${score.Wins}, Losses: ${score.Losses}, Ties: ${score.Tie}`;
+
+
+
+
+
+        document.querySelector('.the-scissor').addEventListener('click',()=>{
+            result('scissor');
+        })
+        document.querySelector('.the-rock').addEventListener('click',()=>{
+            result('rock');
+        })
+        document.querySelector('.the-paper').addEventListener('click',()=>{
+            result('paper');
+        })
+
+        document.querySelector('.b6').addEventListener('click',()=>{
+            resetting();
+        })
+
+
+
+        function resetting(){
+            document.querySelector('.prompt').classList.add('prompt1');
+            document.querySelector('.yes').addEventListener('click',()=>{
+                score={Wins:0,Losses:0,Tie:0};
+                localStorage.removeItem('final');
+                a22.innerHTML = `Wins: ${score.Wins}, Losses: ${score.Losses}, Ties: ${score.Tie}`;
+                document.querySelector('.prompt').classList.remove('prompt1');
+            })
+            document.querySelector('.no').addEventListener('click',()=>{
+                document.querySelector('.prompt').classList.remove('prompt1');
+            });
+        }
+
+
+
+
+        const autoPlayButton=document.querySelector('.auto-play');
+        autoPlayButton.addEventListener('click',()=>{
+            autoplayer();
+        })
+        document.body.addEventListener('keyup',(event)=>{
+            if (event.key==='a'){
+                autoplayer();
+            }
+
+            else if (event.key==='r'){
+                result('rock');
+            }
+            else if (event.key==='p'){
+                result('paper');
+                
+            }
+            else if (event.key==='s'){
+                result('scissor');
+
+            }
+            else if (event.key==='Backspace'){
+                resetting();
+            }
+        })
+
+
+        function autoplayer(){
+            if (!autoPlaying){
+                autoPlayButton.innerHTML='Stop playing';
+                autoPlaying=true;
+                intervalId= setInterval(()=>{
+                    let a1=computerMove();
+                    result(a1);
+                },1000);
+            }
+            
+            
+            else{
+                autoPlayButton.innerHTML='Autoplay';
+                clearInterval(intervalId);
+                autoPlaying=false;
+            }
+        }
+
+        function computerMove(){
+            const number = Math.random();
+
+            if (number<1/3){
+                return ('rock');
+            }
+            else if (number<2/3){
+                return ('paper');
+            }
+            else if (number<1){
+                return ('scissor');
+            }
+        }
+
+
+
+        function result (yourMove){
+
+
+
+            let status;
+            let cM =computerMove();
+            if(yourMove==='rock'){
+                if (cM==='rock'){
+                    score.Tie+=1;
+                    status='A tie.';
+                }
+                else if (cM==='paper'){
+                    score.Losses+=1;
+                    status='You lose.';
+                    
+                }
+                else if (cM==='scissor'){
+                    score.Wins+=1;
+                    status='You win.';
+                }
+            }
+            
+            
+            
+            
+            
+            
+            else if(yourMove==='scissor'){
+                
+                if (cM==='rock'){
+                    score.Losses+=1;
+                    status='You lose.';
+                }
+                else if (cM==='paper'){
+                    score.Wins+=1;
+                    status='You win.';
+                    
+                }
+                else if (cM==='scissor'){
+                    score.Tie+=1;
+                    status='A tie.';
+                }
+            }
+            
+            
+            
+            else if(yourMove==='paper'){
+                if (cM==='rock'){
+                    score.Wins+=1;
+                    status='You win.';
+                }
+                else if (cM==='paper'){
+                    score.Tie+=1;
+                    status='A tie.';
+                    
+                }
+                else if (cM==='scissor'){
+                    score.Losses+=1;
+                    status='You lose.';
+                }
+
+            }
+
+            a23.innerHTML=(`${status}`);
+
+            let grand,grand2;
+            grand=igProcess(yourMove);
+            grand2=igProcess(cM);
+            a24.innerHTML=(`<br>You ${grand} ${grand2} Computer`);
+            
+            a22.innerHTML = `Wins: ${score.Wins}, Losses: ${score.Losses}, Ties: ${score.Tie}`;
+            localStorage.setItem('final',JSON.stringify(score));
+
+            
+            function igProcess(move){
+                if (move==='rock'){
+                    return('<img src="rock-emoji.png" class="i1">');
+                }
+                else if (move==='paper'){
+                    return('<img src="paper-emoji.png" class="i1">');
+                }
+
+                else if (move==='scissor'){
+                    return('<img src="scissors-emoji.png" class="i1">');
+                }
+            }
+
+    }
+    const a11 = ((document.querySelector('button')).classList.contains('b1'));
+    </script>
+</body>
+</html>

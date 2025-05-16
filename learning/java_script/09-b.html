@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <input type="text" placeholder="Please enter your name" class="inputValue" onkeydown="f0(event);">
+    <button class="submit" onclick="f1();">Submit</button>
+    <p class="msg"></p>
+    
+    <!-- fg -->
+    
+    <script>
+
+        function f0(event){
+            if (event.key==='Enter'){
+                f1();
+            }
+        }
+
+        function f1(){
+            document.querySelector('.msg').innerHTML=`Your name is : ${document.querySelector('.inputValue').value}`;}
+    </script>
+</body>
+</html>
