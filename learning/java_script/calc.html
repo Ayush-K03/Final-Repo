@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <style>
+        body{
+            /* background-color: black; */
+            font-family: Georgia, 'Times New Roman', Times, serif;
+        }
+
+
+        .p0{
+            height: 30px;
+            width: 30px;
+            border: 1px solid rgb(77, 75, 75);
+            border-radius: 20px;
+            font-size: 10px;
+            transition: background-color 0.35s;
+            transition: color 0.25s;
+            font-size: 12px;
+        }
+
+
+        .p002{
+        /* height: 40px;
+        width: 40px; */
+        border: none;
+        border-radius: 20px;
+        font-size: 10px;
+        transition: background-color 0.35s;
+        transition: color 0.25s;
+        background-color: rgb(43, 40, 40);
+        color: white;
+        }
+
+        .p002 .o9:hover{
+            background-color: blue;
+        }
+
+        button:hover{
+            background-color: rgba(33, 2, 2, 0.667);
+        }
+
+        .dark{
+            height: 20px;
+            width: 20px;
+            border-radius: 20px;
+            cursor:pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border:none;
+            background-color: lightgray;    
+        }
+
+        .dark002{
+            height: 20px;
+            width: 20px;
+            border-radius: 20px;
+            cursor:pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border:none;
+            background-color: rgb(0, 0, 0);
+            color: white;    
+        }
+
+        .darkContainer{
+            display: flex;
+            justify-content: start;
+            height: 20px;
+            width: 38px;
+            border : 1px solid rgb(155, 147, 147);
+            padding: 0px 0px;
+            border-radius:20px;  
+        }
+        
+        .darkContainer002{
+            display: flex;
+            justify-content: end;
+            height: 20px;
+            width: 38px;
+            border : 1px solid rgb(155, 147, 147);
+            padding: 0px 0px;
+            border-radius:20px;
+        }
+        
+
+        .i002{
+            color: white;
+        }
+
+
+        .mega{
+            display: flex;
+            /* flex-direction: column; */
+            align-items: center;
+            justify-content: center;
+            padding-top: 20px;
+            padding-bottom: 20px;
+            border: 1px solid salmon;
+            margin-left: 250px;
+            margin-right: 250px;
+
+        }
+
+        .o9{
+            background-color: rgb(255, 142, 36);
+        }
+
+    </style>
+</head>
+<body>
+    <div class="mega">
+
+        <div>
+            <div style="display: flex; justify-content: center; width: 100%">
+                <div class="darkContainer" id="j2">
+                    <button class="dark" style="display: ;" onclick="darkMode(); " id="j0">&#9728;</button>
+                </div>
+            </div>
+
+            <div>
+                <p class="msg1">Calculator</p>
+                <p></p>
+            </div>
+            <div>
+                <p class="msg"></p>
+                <p></p>
+            </div>
+
+
+            <div style="display: flex; row-gap: 5px; column-gap: 5px;"></div>
+            <div style="margin-bottom: 5px;">
+                <button onclick="                    
+                    func2('1'); " class="p0" id="j1">1
+                </button>
+                
+                    
+                <button onclick="                    
+                    func2('2') " class="p0" id="j1">2
+                </button>
+                
+                
+                <button onclick="                    
+                    func2('3') " class="p0" id="j1">3
+                </button>
+                
+                
+                <button onclick="                    
+                    func2(' + '); " class="p0 o9" id="j1">+
+                </button>
+            </div>
+
+            <div style="margin-bottom: 5px;">
+                <button onclick="                    
+                    func2('4'); " class="p0" id="j1">4
+                </button>
+                
+                
+                <button onclick="                    
+                    func2('5');" class="p0" id="j1">5
+                </button>
+                
+                
+                <button onclick="                    
+                    func2('6'); " class="p0" id="j1">6
+                </button>
+                
+                
+                <button onclick="                    
+                    func2(' - ');" class="p0 o9" id="j1">-
+                </button>
+            </div>
+
+            <div style="margin-bottom: 5px;">
+                <button onclick="                    
+                    func2('7');
+                    " class="p0" id="j1">7
+                </button>
+                
+                
+                <button onclick="                    
+                    func2('8');" class="p0" id="j1">8
+                </button>
+                
+                
+                <button onclick="                    
+                    func2('9');" class="p0" id="j1">9
+                </button>
+                
+                
+                <button onclick="                    
+                    func2(' * ');" class="p0 o9" id="j1">*
+                </button>
+            </div>
+
+
+            <div style="margin-bottom: 5px;">
+                <button onclick="                    
+                    func2('0');" class="p0" id="j1">0
+                </button>
+                
+                
+                <button onclick="                    
+                    func2('.');" class="p0" id="j1">.
+                </button>
+                
+                
+                <button onclick="
+                    if (a1!==''){
+                        a1=eval(a1);
+                        document.querySelector('.msg').innerHTML=(a1);
+                    }
+
+                    else{
+                        document.querySelector('.msg').innerHTML=('Nothing to evaluate! ');
+                    }
+                    localStorage.setItem('answer',a1);
+                    " class="p0" id="j1">=
+                </button>
+                
+                
+                <button onclick="                    
+                    func2(' / ');" class="p0 o9" id="j1">/
+                </button>
+            </div>
+
+            <div class="t6" style="display: flex; justify-content: start;">
+                <button style=" width: 30px; font-size: 9px; display: flex; align-items: center; justify-content: center;" onclick="
+                    document.querySelector('.msg').innerHTML=('Cleared.');
+                    a1='';
+                    localStorage.setItem('answer',a1);
+                    " class="p0" id="j1">Clear</button>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+    <script>
+        let mode=false;
+        let a1;
+
+        if (localStorage.getItem('answer')===null){
+            a1='';
+            document.querySelector('.msg').innerHTML=(a1);
+        }
+        else{
+            a1=(localStorage.getItem('answer'));
+            document.querySelector('.msg').innerHTML=(a1);
+        }
+        function func2(a4){
+            a1=a1+a4;
+            document.querySelector('.msg').innerHTML=(a1);
+        }
+
+
+
+
+        function darkMode(){
+            const a1=document.querySelector('#j2');
+            const a2=document.querySelector('#j0');
+            const a3=document.querySelectorAll('#j1');
+
+            if ((!mode)){
+                a2.innerHTML='<i class="fa fa-moon-o"></i>';
+                document.querySelector('.msg').classList.add('i002');     
+                document.querySelector('.msg1').classList.add('i002');     
+                a3.forEach(function (button) {
+                    button.classList.add('p002');
+                });
+                a1.classList.add('darkContainer002');     
+                a1.classList.remove('darkContainer');     
+                a2.classList.add('dark002');     
+                a2.classList.remove('dark');
+                document.body.style.backgroundColor='black';
+                mode=true;     
+            }   
+            
+            else{
+                a2.innerHTML='&#9728;';
+                document.querySelector('.msg').classList.remove('i002');     
+                document.querySelector('.msg1').classList.remove('i002');     
+                a3.forEach(function (button) {
+                    button.classList.remove('p002');
+                    button.classList.add('p0');
+                    // butt
+                });
+                a1.classList.remove('darkContainer002');     
+                a1.classList.add('darkContainer');     
+                a2.classList.remove('dark002');     
+                a2.classList.add('dark');   
+                document.body.style.backgroundColor='white';
+                mode=false;     
+            }   
+        }
+
+    </script>
+</body>
+</html>

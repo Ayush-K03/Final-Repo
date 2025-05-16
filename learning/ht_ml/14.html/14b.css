@@ -1,0 +1,52 @@
+body{
+    font-family: arial;
+}
+
+.sidebar1{
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgb(37, 34, 34);
+}
+
+.sidebar2{
+   position: fixed;
+   background-color: rgba(7, 6, 6, 0.817); 
+   color: rgb(189, 186, 186);
+
+   left:70px;
+   top: 0px;
+   bottom:0px;
+   padding: 10px;
+   width: 150px;
+
+}
+
+
+.sidebar1 img{
+    height: 50px;
+    width: 50px;
+    border-radius: 50px;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-top: 5px;
+
+}
+
+.header{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0px;
+    font-size: 15px;
+    align-items: cen4;
+    
+}
+
+.values{
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+    margin-top: 10px;
+    height: 100%;
+}

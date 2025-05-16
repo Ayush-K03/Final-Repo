@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+
+
+
+
+
+
+
+    <script>
+        // function getLastValue(array){
+        //     let a1=(array[(array.length)-1]);
+        //     let a2=(array[0]);
+        //     array[0]=a1;
+        //     array[array.length-1]=a2;
+        //     console.log(array);
+        // }
+///
+        // function looper(array,array2){
+        //     let i=0;
+        //     const a3=[];
+        //     while (i<array.length){
+        //         console.log(array[i]+array2[i]);
+        //         a3.push(array[i]+array2[i]);
+        //         i+=1;
+        //     }
+        //     console.log(a3);
+        // }
+        // looper();
+
+        
+
+        // function countWords(array){
+        //     const o9={};
+        //     for ( let i=0; i<array.length;i++){
+        //         let count=0;
+        //         for ( let j=0; j<array.length;j++){
+        //             if (array[j]===array[i]){
+        //                 count+=1;
+        //             }
+        //         }
+
+        //         o9[array[i]] = count;
+        //     }
+
+        //     console.log(o9);
+        // }
+        
+
+
+
+        function f1(array,word){
+            let a1=0;
+            for ( let i=0; i<array.length;i++){
+                if (word===array[i]){
+                    a1=1;
+                    return(i);
+                }
+            }
+            return(-1);
+        }
+
+        function f2(array2){
+            let array3=[];
+
+            for (let i=0; i<array2.length;i++){
+                let x= f1(array3,array2[i]);
+                if (x===-1){
+                    array3.push(array2[i]);
+                }   
+            }
+            console.log(array3);
+        }
+            f2(['apple','grape','guava','egg','search','apple','egg','apple','grape','egg','search','guava'])
+
+
+        // function f1(array){
+        //     let a1=0;
+        //     for ( let i=0; i<array.length;i++){
+        //         if ('search'===array[i]){
+        //             console.log(`Index of search : ${i}`);
+        //             a1=1;
+        //             console.log('Exited on first appearance');
+        //             break
+        //         }
+        //     }
+
+        //     if (a1 !== 1){
+        //         console.log(-1);
+        //     }
+
+
+
+
+        // function f1(array1,word='egg'){
+        //     let array=(array1.slice().reverse())
+        //     console.log(array1);
+        //     console.log(array);
+        //     let a1=0;
+        //     const a2=[];
+        //     for ( let i=0; i<array.length;i++){
+        //         if (word===array[i]){
+        //             if (a1<2){
+        //                 a1+=1;
+        //                 continue;
+        //             }
+                
+        //             else{
+        //                 a2.push(array[i]);
+                
+        //             }
+        //         }
+
+        //         else{
+        //             a2.push(array[i]);
+        //         }
+        //     }
+        //     console.log(a2.reverse());
+        
+        // }
+
+
+
+
+
+
+
+        // function f1(){
+        //     for (let i=1; i<21; i++){
+        //         if (i%3===0){
+        //             console.log('Fizz');
+        //             if (i%5===0){
+        //                 console.log('FizzBuzz');}
+        //         }
+
+        //         else if (i%5===0){
+        //             console.log('Buzz');
+        //         }
+
+        //         else{
+        //             console.log(i);
+        //         }
+        //     }
+        // }
+
+
+        // f1();
+    </script>
+</body>
+</html>

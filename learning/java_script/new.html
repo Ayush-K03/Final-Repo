@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+
+    <script>
+
+        function greet (value,current,later){
+            let a2;
+
+            if (current==='miles'){
+                if (later==='km'){
+                    return(`Current value:${value}${current} , New value:${value*1.6}${later}`);
+                }
+                else if (later==='ft'){
+                    return(`Current value:${value}${current} , New value:${value*5280}${later}`);
+                }
+            }
+
+
+            else if (current==='ft'){
+                if (later==='km'){
+                    return(`Current value:${value}${current} , New value:${value*0.0003}${later}`);
+                }
+                else if (later==='miles'){
+                    return(`Current value:${value}${current} , New value:${value*0.000189}${later}`);
+                }
+            }
+
+
+
+            else if (current==='km'){
+                if (later==='miles'){
+                    return(`Current value:${value}${current} , New value:${value*0.62}${later}`);
+                }
+                else if (later==='ft'){
+                    return(`Current value:${value}${current} , New value:${value*3280}${later}`);
+                }
+
+            }
+
+            else{
+                return(`Invalid unit : '${current}'`)
+            }
+        }
+
+
+
+        console.log(greet(5,'miles','km'));
+        console.log(greet(5,'miles','ft'));
+        console.log(greet(5,'km','ft'));
+        console.log(greet(5,'km','ftt'));
+
+    </script>
+</body>
+</html>

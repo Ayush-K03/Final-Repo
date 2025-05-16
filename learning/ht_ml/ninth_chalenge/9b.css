@@ -1,0 +1,102 @@
+.final{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    column-gap: 20px;
+    /* align-items: center; */
+    justify-items: center;
+    row-gap: 25px;
+}
+.frnds{
+    /* display: inline-block; */
+    height: 320px;
+    width: 250px;
+    box-shadow: 1px 1px 15px rgba(0, 0, 0, 0.639);
+    border-radius: 3px;
+}
+
+.real{
+
+    width: 100%;
+    height: 180px;
+    object-fit:cover;
+    display: block;
+}
+.name{
+    padding-top: 5px;
+}
+
+.mutual-frnd{
+    vertical-align: middle;
+    padding-left: 5px;
+    padding-bottom: 8px;
+
+}
+
+.pp{
+    height: 30px;
+    width: 30px;
+    border-radius: 15px;
+
+}
+
+button{
+    display: block;
+}
+
+
+p{
+    margin: 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.a2{
+    padding-left: 5px;
+    font-weight: bold;
+    font-family: arial;
+    margin-bottom: 8px;
+    font-size:20px
+}
+
+.a3{
+    font-family: arial;
+    padding-left: 7px;
+    color: grey;
+    margin-top: 0px;
+    margin-bottom: 12px;
+    display: inline-block;
+    font-size:15px;
+    vertical-align: bottom;
+
+}
+
+.a4{
+    font-family: arial;
+    padding: 8px 15px ;
+    background-color: rgb(12, 90, 207);
+    color: white;
+    border: none;
+    border-radius: 3px;
+    margin-left: 8px;
+    /* font-size */
+
+
+}
