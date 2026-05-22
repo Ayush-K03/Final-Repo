@@ -1,0 +1,15 @@
+.card {
+  display: inline;
+  align-items: center;
+  
+}
+
+.card2{
+  display: inline;
+}
+
+.box{
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
